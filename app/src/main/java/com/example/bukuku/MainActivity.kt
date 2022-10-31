@@ -6,6 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 import android.widget.Button
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONArray
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -17,6 +25,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val url = "https://bukuku.free.beeceptor.com"
 
         btnregister = findViewById(R.id.btnregister)
         btnregister.setOnClickListener(this)
