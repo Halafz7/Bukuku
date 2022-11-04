@@ -21,6 +21,9 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
 
         lupapassword = findViewById(R.id.lupapassword)
         lupapassword.setOnClickListener(this)
+
+        btnregister = findViewById(R.id.btnregister)
+        btnregister.setOnClickListener(this)
     }
 
     override fun onClick(p0: View) {
@@ -34,8 +37,8 @@ class SignIn : AppCompatActivity(), View.OnClickListener {
                 startActivity(intentForget)
             }
             R.id.btnregister ->{
-                val intentBiasa = Intent(this@SignIn, Register::class.java)
-                startActivity(intentBiasa)
+                val intentDaftar = Intent(this@SignIn, Register::class.java)
+                startActivity(intentDaftar)
             }
         }
 

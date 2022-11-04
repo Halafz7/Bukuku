@@ -15,7 +15,11 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), IVolley, View.OnClickListener {
+    override fun onResponse(response: String) {
+        //Show Toast
+        Toast.makeText(this@MainActivity,""+response,Toast.LENGTH_SHORT).show()
+    }
 
     private lateinit var btnregister : Button
     private lateinit var btnsignin : Button
@@ -26,16 +30,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val url = "https://bukuku.free.beeceptor.com"
-
         btnregister = findViewById(R.id.btnregister)
-        btnregister.setOnClickListener(this)
+        btnregister.setOnClickListener{
+            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
+                .getRequest("https://bukuku.free.beeceptor.com")
+        }
 
         btnsignin = findViewById(R.id.btnsignin)
-        btnsignin.setOnClickListener(this)
+        btnsignin.setOnClickListener{
+            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
+                .getRequest("https://bukuku.free.beeceptor.com")
+        }
 
         btnsigningoogle = findViewById(R.id.btnsigningoogle)
-        btnsigningoogle.setOnClickListener(this)
+        btnsigningoogle.setOnClickListener{
+            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
+                .getRequest("https://bukuku.free.beeceptor.com")
+        }
 
     }
 
