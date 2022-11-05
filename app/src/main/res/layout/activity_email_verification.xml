@@ -69,7 +69,7 @@
                 android:gravity="center"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:text="We have sent a password recover instructions to your email."
+                android:text="Please check your email to verify your account."
                 android:textSize="15dp"
                 android:textColor="#535257"
                 android:fontFamily="@font/roboto_medium">

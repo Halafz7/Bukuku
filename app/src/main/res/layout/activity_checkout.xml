@@ -75,24 +75,13 @@
                 android:textColor="#000000">
             </androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:layout_gravity="bottom">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Order details"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_marginLeft="25dp"
-                    android:textSize="20dp"
-                    android:textColor="#000000">
-                </TextView>
-            </LinearLayout>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/scrollView"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,71 +147,137 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="10dp">-->
+            <!--                <com.google.android.material.imageview.ShapeableImageView-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="155dp"-->
+            <!--                    android:layout_marginLeft="25dp"-->
+            <!--                    android:background="#CECECE">-->
+            <!--                </com.google.android.material.imageview.ShapeableImageView>-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="fill_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:layout_marginRight="25dp">-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="60dp"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="30dp"-->
+            <!--                        android:layout_gravity="bottom"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="10dp">-->
+            <!--                <com.google.android.material.imageview.ShapeableImageView-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="155dp"-->
+            <!--                    android:layout_marginLeft="25dp"-->
+            <!--                    android:background="#CECECE">-->
+            <!--                </com.google.android.material.imageview.ShapeableImageView>-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="fill_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:layout_marginRight="25dp">-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="60dp"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="30dp"-->
+            <!--                        android:layout_gravity="bottom"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="10dp">-->
+            <!--                <com.google.android.material.imageview.ShapeableImageView-->
+            <!--                    android:layout_width="100dp"-->
+            <!--                    android:layout_height="155dp"-->
+            <!--                    android:layout_marginLeft="25dp"-->
+            <!--                    android:background="#CECECE">-->
+            <!--                </com.google.android.material.imageview.ShapeableImageView>-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="fill_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:layout_marginRight="25dp">-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="60dp"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                    <FrameLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="30dp"-->
+            <!--                        android:layout_gravity="bottom"-->
+            <!--                        android:layout_marginLeft="10dp"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:background="#CECECE">-->
+            <!--                    </FrameLayout>-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:gravity="center|bottom"
+            android:layout_marginTop="15dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="100dp"
-                    android:layout_height="155dp"
-                    android:layout_marginLeft="25dp"
-                    android:background="#CECECE">
-                </com.google.android.material.imageview.ShapeableImageView>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginRight="25dp">
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#CECECE">
-                    </FrameLayout>
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"
-                        android:background="#CECECE">
-                    </FrameLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="bottom"
-                android:background="#FFFFFF"
-                android:orientation="horizontal"
-                android:weightSum="5">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center"
+                android:layout_weight="3"
+                android:gravity="right">
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="right|center"
-                    android:gravity="right">
-                    <FrameLayout
-                        android:layout_width="150dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="right|center"
-                        android:background="#CECECE"
-                        android:layout_marginRight="10dp">
-                    </FrameLayout>
-                </LinearLayout>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:background="#1C1B54"
-                    android:text="CHECKOUT"
-                    android:textColor="#FFFFFF"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="20dp">
-                </androidx.appcompat.widget.AppCompatButton>
+                    android:layout_marginRight="10dp"
+                    android:background="#CECECE">
+                </FrameLayout>
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#1C1B54"
+                android:fontFamily="@font/roboto_bold"
+                android:text="CHECKOUT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"></androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

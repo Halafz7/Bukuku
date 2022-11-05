@@ -10,20 +10,42 @@
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/drawable/ic_reset_pw.xml" value="0.143" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/drawable/ic_sign_in.xml" value="0.143" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/drawable/ic_sign_in_tombol.xml" value="0.1" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_book_information.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_check_email.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_checkout.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_edit_profile.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_forgot_password.xml" value="0.16" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_homepage.xml" value="0.1" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_my_book.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_my_cart.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_mybook.xml" value="0.1" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_payment.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_profile.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Afif/AndroidStudioProjects/Bukuku/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_add_to_catalogue.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_addtocatalogue.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_book_information.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_bookinformation.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_check_email.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_checkout.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_edit_oprofile.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_edit_profile.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_editprofile.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_email_verification.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_forgot_password.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_history.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_homepage.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_my_book.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_my_cart.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_mybook.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_mycart.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_new_password.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_newpassword.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_payment.xml" value="0.16545532278751604" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_register.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/activity_sign_in.xml" value="0.17828131680205217" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/checkout.xml" value="0.6666666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/footer.xml" value="0.1774262505344164" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Project_Bukuku/app/src/main/res/layout/order_details_content.xml" value="0.17828131680205217" />
       </map>
     </option>
   </component>
