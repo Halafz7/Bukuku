@@ -16,7 +16,7 @@ class MyVolleyRequest {
     private var context:Context?=null
     private var iVolley:IVolley?=null
     var imageLoader:ImageLoader?=null
-        get
+        private set
 
     val requestQueue:RequestQueue
         get() {

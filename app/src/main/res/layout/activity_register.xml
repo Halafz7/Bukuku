@@ -111,7 +111,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/registernow"
+                android:id="@+id/registerNow"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:background="@drawable/edit_txt_1"
@@ -135,7 +135,7 @@
                 android:fontFamily="@font/roboto_medium">
             </TextView>
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/signinregister"
+                android:id="@+id/signInRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign in"
@@ -145,6 +145,4 @@
             </androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

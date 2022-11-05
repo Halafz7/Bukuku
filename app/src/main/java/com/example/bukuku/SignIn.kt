@@ -5,38 +5,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 
-class SignIn : AppCompatActivity(), View.OnClickListener {
+class SignIn : AppCompatActivity(),IVolley ,View.OnClickListener {
+    override fun onResponse(response: String) {
+        //Show Toast
+        Toast.makeText(this@SignIn, ""+response,Toast.LENGTH_SHORT).show()
+    }
 
-    private lateinit var masukhomepage: Button
-    private lateinit var lupapassword: Button
-    private lateinit var btnregister: Button
+    private lateinit var masukHomepage: Button
+    private lateinit var lupaPassword: Button
+    private lateinit var btnRegisterNow: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        masukhomepage = findViewById(R.id.masukhomepage)
-        masukhomepage.setOnClickListener(this)
+        masukHomepage = findViewById(R.id.masukHomepage)
+        masukHomepage.setOnClickListener{
+            MyVolleyRequest.getInstance(this@SignIn, this@SignIn)
+                .getRequest("https://bukuku.free.beeceptor.com")
+        }
 
-        lupapassword = findViewById(R.id.lupapassword)
-        lupapassword.setOnClickListener(this)
+        lupaPassword = findViewById(R.id.lupaPassword)
+        lupaPassword.setOnClickListener(this)
 
-        btnregister = findViewById(R.id.btnregister)
-        btnregister.setOnClickListener(this)
+        btnRegisterNow = findViewById(R.id.btnRegisterNow)
+        btnRegisterNow.setOnClickListener(this)
     }
 
     override fun onClick(p0: View) {
         when (p0.id) {
-            R.id.masukhomepage -> {
+            R.id.masukHomepage -> {
                 val intentHomepage = Intent(this@SignIn, Homepage::class.java)
                 startActivity(intentHomepage)
             }
-            R.id.lupapassword -> {
+            R.id.lupaPassword -> {
                 val intentForget = Intent(this@SignIn, ForgotPassword::class.java)
                 startActivity(intentForget)
             }
-            R.id.btnregister ->{
+            R.id.btnRegisterNow ->{
                 val intentDaftar = Intent(this@SignIn, Register::class.java)
                 startActivity(intentDaftar)
             }

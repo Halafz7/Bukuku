@@ -15,52 +15,39 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-class MainActivity : AppCompatActivity(), IVolley, View.OnClickListener {
-    override fun onResponse(response: String) {
-        //Show Toast
-        Toast.makeText(this@MainActivity,""+response,Toast.LENGTH_SHORT).show()
-    }
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var btnregister : Button
-    private lateinit var btnsignin : Button
-    private lateinit var btnsigningoogle : Button
+    private lateinit var btnRegister : Button
+    private lateinit var btnSignIn: Button
+    private lateinit var btnSignInGoogle : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnregister = findViewById(R.id.btnregister)
-        btnregister.setOnClickListener{
-            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
-                .getRequest("https://bukuku.free.beeceptor.com")
-        }
+        btnRegister = findViewById(R.id.btnRegister)
+        btnRegister.setOnClickListener(this)
 
-        btnsignin = findViewById(R.id.btnsignin)
-        btnsignin.setOnClickListener{
-            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
-                .getRequest("https://bukuku.free.beeceptor.com")
-        }
+        btnSignIn = findViewById(R.id.btnSignIn)
+        btnSignIn.setOnClickListener(this)
 
-        btnsigningoogle = findViewById(R.id.btnsigningoogle)
-        btnsigningoogle.setOnClickListener{
-            MyVolleyRequest.getInstance(this@MainActivity, this@MainActivity)
-                .getRequest("https://bukuku.free.beeceptor.com")
-        }
+        btnSignInGoogle = findViewById(R.id.btnSignInGoogle)
+        btnSignInGoogle.setOnClickListener(this)
 
     }
 
     override fun onClick(p0: View) {
         when(p0.id){
-            R.id.btnregister ->{
+            R.id.btnRegister ->{
                 val intentBiasa = Intent(this@MainActivity, Register::class.java)
                 startActivity(intentBiasa)
             }
-            R.id.btnsignin ->{
+            R.id.btnSignIn ->{
                 val intentBiasa2 = Intent(this@MainActivity, SignIn::class.java)
                 startActivity(intentBiasa2)
             }
-            R.id.btnsigningoogle ->{
+            R.id.btnSignInGoogle ->{
                 val intentBiasa3 = Intent(this@MainActivity, SignIn::class.java)
                 startActivity(intentBiasa3)
             }
