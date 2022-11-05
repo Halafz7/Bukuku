@@ -16,6 +16,33 @@
         android:theme="@style/Theme.Bukuku"
         tools:targetApi="31">
         <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
+            android:name=".payment"
+            android:exported="false" />
+        <activity
+            android:name=".newpassword"
+            android:exported="false" />
+        <activity
+            android:name=".mycart"
+            android:exported="false" />
+        <activity
+            android:name=".mybook"
+            android:exported="false" />
+        <activity
+            android:name=".editprofile"
+            android:exported="false" />
+        <activity
+            android:name=".checkout"
+            android:exported="false" />
+        <activity
+            android:name=".bookinformation"
+            android:exported="false" />
+        <activity
+            android:name=".addtocatalogue"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

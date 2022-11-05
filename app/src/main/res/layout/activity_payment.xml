@@ -71,7 +71,7 @@
                 android:layout_marginLeft="20dp"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center_vertical"
-                android:text="< Back"
+                android:text="Back"
                 android:textColor="#000000">
             </androidx.appcompat.widget.AppCompatButton>
         </LinearLayout>
