@@ -22,10 +22,8 @@ class SignIn : AppCompatActivity(),IVolley ,View.OnClickListener {
         setContentView(R.layout.activity_sign_in)
 
         masukHomepage = findViewById(R.id.masukHomepage)
-        masukHomepage.setOnClickListener{
-            MyVolleyRequest.getInstance(this@SignIn, this@SignIn)
-                .getRequest("https://bukuku.free.beeceptor.com")
-        }
+        masukHomepage.setOnClickListener(this)
+
 
         lupaPassword = findViewById(R.id.lupaPassword)
         lupaPassword.setOnClickListener(this)
