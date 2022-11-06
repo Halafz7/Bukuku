@@ -53,6 +53,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_txt_1"
                 android:hint="Username"
+                android:inputType="text"
                 android:textColorHint="#888888"
                 android:paddingLeft="20dp">
             </EditText>
@@ -69,6 +70,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_txt_1"
                 android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:textColorHint="#888888"
                 android:paddingLeft="20dp">
             </EditText>
@@ -85,6 +87,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_txt_1"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:textColorHint="#888888"
                 android:paddingLeft="20dp">
             </EditText>
@@ -101,6 +104,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/edit_txt_1"
                 android:hint="Confirm password"
+                android:inputType="textPassword"
                 android:textColorHint="#888888"
                 android:paddingLeft="20dp">
             </EditText>
