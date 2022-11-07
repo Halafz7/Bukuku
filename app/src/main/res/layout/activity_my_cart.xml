@@ -73,9 +73,11 @@
             android:layout_height="50dp"
             android:layout_gravity="center">
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back"
                 android:layout_width="73dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center_vertical"
                 android:text="Back"
@@ -126,6 +128,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
                     <CheckBox
+                        android:checked="false"
+                        android:id="@+id/checkbox1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                     </CheckBox>
@@ -166,47 +170,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    </CheckBox>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="100dp"
-                    android:layout_height="155dp"
-                    android:layout_marginLeft="25dp"
-                    android:background="#CECECE">
-                </com.google.android.material.imageview.ShapeableImageView>
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="#CECECE"></FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_gravity="bottom"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"
-                        android:background="#CECECE"></FrameLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-                    <CheckBox
+                        android:checked="false"
+                        android:id="@+id/checkbox2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                     </CheckBox>
@@ -248,6 +213,51 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
                     <CheckBox
+                        android:checked="false"
+                        android:id="@+id/checkbox3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </CheckBox>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="155dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="#CECECE">
+                </com.google.android.material.imageview.ShapeableImageView>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#CECECE"></FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#CECECE"></FrameLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+                    <CheckBox
+                        android:checked="false"
+                        android:id="@+id/checkbox4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                     </CheckBox>
@@ -277,6 +287,7 @@
                 </FrameLayout>
             </LinearLayout>
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/checkout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"

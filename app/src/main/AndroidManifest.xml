@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Bukuku"
         tools:targetApi="31">
         <activity
+            android:name=".BookInformation"
+            android:exported="false" />
+        <activity
+            android:name=".MyCart"
+            android:exported="false" />
+        <activity
             android:name=".history"
             android:exported="false" />
         <activity
