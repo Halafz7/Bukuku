@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.Toast
 import kotlin.math.sign
 
@@ -14,23 +15,45 @@ class MyCart : AppCompatActivity(),IVolley, View.OnClickListener {
         Toast.makeText(this@MyCart,""+response,Toast.LENGTH_SHORT).show()
     }
 
-    private lateinit var back2: Button
+    private lateinit var back: Button
     private lateinit var checkout: Button
-    private lateinit var checkbox: CheckBox
+    private lateinit var checkbox1: CheckBox
+    private lateinit var checkbox2: CheckBox
+    private lateinit var checkbox3: CheckBox
+    private lateinit var checkbox4: CheckBox
+    private lateinit var profile: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_item)
+        setContentView(R.layout.activity_my_cart)
 
-        back2 = findViewById(R.id.back)
-        back2.setOnClickListener {
-            MyVolleyRequest.getInstance(this@MyCart, this@MyCart).getRequest("https://bukuku.free.beeceptor.com/register")
-        }
+        back = findViewById(R.id.back)
+
         checkout = findViewById(R.id.checkout)
-        checkout.setOnClickListener(this)
 
-        checkbox = findViewById(R.id.checkbox)
-        checkbox.setonChe
+        checkbox1 = findViewById(R.id.checkbox1)
+        checkbox2 = findViewById(R.id.checkbox2)
+        checkbox3 = findViewById(R.id.checkbox3)
+        checkbox4 = findViewById(R.id.checkbox4)
+        profile = findViewById(R.id.profile)
+    }
+    override fun onClick(p0: View) {
+        when(p0.id){
+            R.id.profile -> {
+                val intentProfile = Intent(this@MyCart, Profile::class.java)
+                startActivity(intentProfile)
+            }
+            R.id.back ->{
+                val intentBack = Intent(this@MyCart, BookInformation::class.java)
+                startActivity(intentBack)
+            }
+            R.id.checkout ->{
+                val intentCheckOut = Intent(this@MyCart, CheckOut::class.java)
+                startActivity(intentCheckOut)
+            }
+            //belum ada untuk checkboxnya
+        }
+    }
 
 //        class MyActivity : Activity() {
 //            override fun onCreate(icicle: Bundle?) {
@@ -42,5 +65,5 @@ class MyCart : AppCompatActivity(),IVolley, View.OnClickListener {
 //                }
 //            }
 //        }
-    }
+
 }

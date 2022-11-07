@@ -26,6 +26,7 @@
             android:background="#FFFFFF"
             android:gravity="right">
             <ImageButton
+                android:id="@+id/profile"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/searchicon"
@@ -106,7 +107,7 @@
                         android:layout_height="190dp"
                         android:layout_gravity="center"
                         android:background="#CECECE"
-                        android:id="@+id/book">
+                        android:id="@+id/book1">
                     </com.google.android.material.imageview.ShapeableImageView>
                     <FrameLayout
                         android:layout_marginTop="10dp"
@@ -137,7 +138,7 @@
                         android:layout_height="190dp"
                         android:layout_gravity="center"
                         android:background="#CECECE"
-                        android:id="@+id/book">
+                        android:id="@+id/book2">
                     </com.google.android.material.imageview.ShapeableImageView>
                     <FrameLayout
                         android:layout_marginTop="10dp"
@@ -174,7 +175,7 @@
                         android:layout_height="190dp"
                         android:layout_gravity="center"
                         android:background="#CECECE"
-                        android:id="@+id/book">
+                        android:id="@+id/book3">
                     </com.google.android.material.imageview.ShapeableImageView>
                     <FrameLayout
                         android:layout_marginTop="10dp"
@@ -205,7 +206,7 @@
                         android:layout_height="190dp"
                         android:layout_gravity="center"
                         android:background="#CECECE"
-                        android:id="@+id/book">
+                        android:id="@+id/book4">
                     </com.google.android.material.imageview.ShapeableImageView>
                     <FrameLayout
                         android:layout_marginTop="10dp"

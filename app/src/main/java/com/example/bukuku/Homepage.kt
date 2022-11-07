@@ -14,22 +14,44 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
         //Show Toast
         Toast.makeText(this@Homepage,""+response, Toast.LENGTH_SHORT).show()
     }
-    private lateinit var buku: Button
+
+    private lateinit var buku1: Button
+    private lateinit var buku2: Button
+    private lateinit var buku3: Button
+    private lateinit var buku4: Button
+    private lateinit var profile: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
-        buku = findViewById(R.id.book)
-        buku.setOnClickListener {
-            MyVolleyRequest.getInstance(this@Homepage, this@Homepage).getRequest("https://bukuku.free.beeceptor.com/homepage")
-        }
+        buku1 = findViewById(R.id.book1)
+        buku2 = findViewById(R.id.book2)
+        buku3 = findViewById(R.id.book3)
+        buku4 = findViewById(R.id.book4)
+        profile = findViewById(R.id.profile)
     }
 
     override fun onClick(p0: View) {
         when (p0.id) {
-            R.id.book -> {
-                val intentHomepage = Intent(this@Homepage, BookInformation::class.java)
-                startActivity(intentHomepage)
+            R.id.profile -> {
+                val intentProfile = Intent(this@Homepage, Profile::class.java)
+                startActivity(intentProfile)
+            }
+            R.id.book1 -> {
+                val intentBook = Intent(this@Homepage, BookInformation::class.java)
+                startActivity(intentBook)
+            }
+            R.id.book2 -> {
+                val intentBook = Intent(this@Homepage, BookInformation::class.java)
+                startActivity(intentBook)
+            }
+            R.id.book3 -> {
+                val intentBook = Intent(this@Homepage, BookInformation::class.java)
+                startActivity(intentBook)
+            }
+            R.id.book4 -> {
+                val intentBook = Intent(this@Homepage, BookInformation::class.java)
+                startActivity(intentBook)
             }
             }
         }

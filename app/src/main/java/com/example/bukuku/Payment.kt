@@ -6,41 +6,41 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import kotlin.math.sign
 
-class BookInformation : AppCompatActivity(), IVolley, View.OnClickListener {
+class Payment : AppCompatActivity(), IVolley, View.OnClickListener{
     override fun onResponse(response: String) {
         //Show Toast
-        Toast.makeText(this@BookInformation,""+response, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@Payment,""+response,Toast.LENGTH_SHORT).show()
     }
 
     private lateinit var back: Button
-    private lateinit var addToCart: Button
+    private lateinit var backToHomepage: Button
     private lateinit var profile: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_book_information)
+        setContentView(R.layout.activity_payment)
 
-        addToCart = findViewById(R.id.addToCart)
         back = findViewById(R.id.back)
+        backToHomepage = findViewById(R.id.backToHomepage)
         profile = findViewById(R.id.profile)
     }
 
-    override fun onClick(p0: View) {
+    override fun OnClick(p0: View){
         when(p0.id){
             R.id.profile -> {
-                val intentProfile = Intent(this@BookInformation, Profile::class.java)
+                val intentProfile = Intent(this@Payment, Profile::class.java)
                 startActivity(intentProfile)
             }
-            R.id.addToCart ->{
-                val intentCart = Intent(this@BookInformation, MyCart::class.java)
-                startActivity(intentCart)
-            }
-            R.id.back ->{
-                val intentBack = Intent(this@BookInformation, Homepage::class.java)
+            R.id.back -> {
+                val intentBack = Intent(this@Payment, CheckOut::class.java)
                 startActivity(intentBack)
             }
+            R.id.backToHomepage -> {
+                val intentBacktoHomepage = Intent(this@Payment, Homepage::class.java)
+                startActivity(intentBacktoHomepage)
+            }
         }
-
     }
 }

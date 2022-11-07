@@ -20,6 +20,7 @@
         android:layout_height="75dp"
         android:background="#1C1B54">
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/profileimg"
