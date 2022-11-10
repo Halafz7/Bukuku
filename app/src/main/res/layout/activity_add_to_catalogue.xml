@@ -74,7 +74,8 @@
             android:layout_height="0dp"
             android:layout_weight="13">
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="263dp"
+                android:id="@+id/back"
+                android:layout_width="73dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"

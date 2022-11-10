@@ -3,9 +3,9 @@ package com.example.bukuku
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class newpassword : AppCompatActivity() {
+class AddToCatalogue : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_newpassword)
+        setContentView(R.layout.activity_add_to_catalogue)
     }
 }

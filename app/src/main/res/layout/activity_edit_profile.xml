@@ -66,6 +66,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center">
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back"
                 android:layout_width="73dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -155,6 +156,7 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center">
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveChange"
                     android:layout_width="180dp"
                     android:layout_height="40dp"
                     android:background="@drawable/rectangle4"
