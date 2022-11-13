@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#1C1B54">
@@ -34,15 +35,14 @@
                 android:layout_marginRight="10dp">
             </ImageButton>
         </LinearLayout>
-        <Spinner
-            android:id="@+id/dropdown_menu"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clickMenu"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/menuicon"
             android:layout_gravity="left"
-            android:layout_marginLeft="15dp"
-            android:spinnerMode="dropdown">
-        </Spinner>
+            android:layout_marginLeft="15dp">
+        </androidx.appcompat.widget.AppCompatButton>
     </androidx.appcompat.widget.Toolbar>
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->

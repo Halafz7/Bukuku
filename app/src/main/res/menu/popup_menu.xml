@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_homepage"
+        android:title="@string/action_homepage"/>
+    <item
+        android:id="@+id/action_my_cart"
+        android:title="@string/action_my_cart"/>
+    <item
+        android:id="@+id/action_my_book"
+        android:title="@string/action_my_book"/>
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/action_history"/>
+    <item
+        android:id="@+id/action_add_to_catalogue"
+        android:title="@string/action_add_to_catalogue"/>
+</menu>
