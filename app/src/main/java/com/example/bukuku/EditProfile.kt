@@ -17,7 +17,7 @@ class EditProfile : AppCompatActivity(), View.OnClickListener {
         saveChange = findViewById(R.id.saveChange)
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(p0: View) {
         when(p0.id){
             //ke hlm profil tanpa menyimpan perubahan profil
             R.id.registerNow ->{

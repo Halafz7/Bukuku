@@ -10,6 +10,7 @@ import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class MyVolleyRequest {
     private var mRequestQueue:RequestQueue?=null
@@ -77,17 +78,23 @@ class MyVolleyRequest {
 
     //POST METHOD dengan Params
     fun postRequest(url: String){
+        val url = "https://eowpkjl19iypcej.m.pipedream.net"
+
         val postRequest = object :StringRequest(Request.Method.POST,url,
         Response.Listener { response ->
             iVolley!!.onResponse(response.toString())
         },Response.ErrorListener { error -> iVolley!!.onResponse(error.message!!) })
+
         {
             //Ctrl +O
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String,String>()
-                params["name"] = "Afif"
-                params["value"] = "Coba-coba"
+                params.put("Login","your credentials" )
+                params.put("Password", "your credentials")
                 return params
+            }
+            override fun getBodyContentType(): String {
+                return "application/json"
             }
         }
                 addToRequestQueue(postRequest)

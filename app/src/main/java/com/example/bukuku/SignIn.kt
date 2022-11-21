@@ -7,11 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 
-class SignIn : AppCompatActivity(),IVolley ,View.OnClickListener {
-    override fun onResponse(response: String) {
-        //Show Toast
-        Toast.makeText(this@SignIn, ""+response,Toast.LENGTH_SHORT).show()
-    }
+class SignIn : AppCompatActivity() ,View.OnClickListener {
 
     private lateinit var masukHomepage: Button
     private lateinit var lupaPassword: Button

@@ -24,7 +24,7 @@ class Register : AppCompatActivity(),IVolley, View.OnClickListener {
         registerNow = findViewById(R.id.registerNow)
         registerNow.setOnClickListener{
             MyVolleyRequest.getInstance(this@Register, this@Register)
-                .getRequest("https://bukuku.free.beeceptor.com/register")
+                .postRequest("https://eowpkjl19iypcej.m.pipedream.net")
         }
 
         signInRegister = findViewById(R.id.signInRegister)

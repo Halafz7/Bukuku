@@ -8,11 +8,8 @@ import android.widget.Button
 import android.widget.Toast
 import kotlin.math.sign
 
-class Payment : AppCompatActivity(), IVolley, View.OnClickListener{
-    override fun onResponse(response: String) {
-        //Show Toast
-        Toast.makeText(this@Payment,""+response,Toast.LENGTH_SHORT).show()
-    }
+class Payment : AppCompatActivity(), View.OnClickListener{
+
 
     private lateinit var back: Button
     private lateinit var backToHomepage: Button
@@ -27,20 +24,7 @@ class Payment : AppCompatActivity(), IVolley, View.OnClickListener{
         profile = findViewById(R.id.profile)
     }
 
-    override fun OnClick(p0: View){
-        when(p0.id){
-            R.id.profile -> {
-                val intentProfile = Intent(this@Payment, Profile::class.java)
-                startActivity(intentProfile)
-            }
-            R.id.back -> {
-                val intentBack = Intent(this@Payment, CheckOut::class.java)
-                startActivity(intentBack)
-            }
-            R.id.backToHomepage -> {
-                val intentBacktoHomepage = Intent(this@Payment, Homepage::class.java)
-                startActivity(intentBacktoHomepage)
-            }
-        }
+    override fun onClick(p0: View?) {
+        TODO("Not yet implemented")
     }
 }

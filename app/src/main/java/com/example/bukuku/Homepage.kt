@@ -40,10 +40,6 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
 //
 //        }
         }
-
-
-
-
     }
 
     //private fun PopupMenu.setOnMenuItemClickListener(function: (MenuItem) -> Unit) {
