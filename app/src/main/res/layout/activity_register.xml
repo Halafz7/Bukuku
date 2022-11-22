@@ -46,7 +46,9 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:gravity="center">
+
             <EditText
+                android:id="@+id/fieldUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -54,16 +56,17 @@
                 android:background="@drawable/edit_txt_1"
                 android:hint="Username"
                 android:inputType="text"
-                android:textColorHint="#888888"
-                android:paddingLeft="20dp">
-            </EditText>
+                android:paddingLeft="20dp"
+                android:textColorHint="#888888"></EditText>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:gravity="center">
+
             <EditText
+                android:id="@+id/fieldEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -71,16 +74,17 @@
                 android:background="@drawable/edit_txt_1"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:textColorHint="#888888"
-                android:paddingLeft="20dp">
-            </EditText>
+                android:paddingLeft="20dp"
+                android:textColorHint="#888888"></EditText>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:gravity="center">
+
             <EditText
+                android:id="@+id/filedPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -88,16 +92,17 @@
                 android:background="@drawable/edit_txt_1"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColorHint="#888888"
-                android:paddingLeft="20dp">
-            </EditText>
+                android:paddingLeft="20dp"
+                android:textColorHint="#888888"></EditText>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:gravity="center">
+
             <EditText
+                android:id="@+id/fieldConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -105,9 +110,8 @@
                 android:background="@drawable/edit_txt_1"
                 android:hint="Confirm password"
                 android:inputType="textPassword"
-                android:textColorHint="#888888"
-                android:paddingLeft="20dp">
-            </EditText>
+                android:paddingLeft="20dp"
+                android:textColorHint="#888888"></EditText>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

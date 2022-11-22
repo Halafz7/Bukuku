@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Spinner
 import android.widget.Toast
@@ -17,11 +18,11 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
         Toast.makeText(this@Homepage,""+response, Toast.LENGTH_SHORT).show()
     }
 
-    private lateinit var buku1: Button
-    private lateinit var buku2: Button
-    private lateinit var buku3: Button
-    private lateinit var buku4: Button
-    private lateinit var profile: Button
+    private lateinit var buku1: ImageView
+    private lateinit var buku2: ImageView
+    private lateinit var buku3: ImageView
+    private lateinit var buku4: ImageView
+    private lateinit var profile: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

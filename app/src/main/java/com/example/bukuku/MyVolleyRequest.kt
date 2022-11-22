@@ -3,6 +3,7 @@ package com.example.bukuku
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.LruCache
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -77,8 +78,8 @@ class MyVolleyRequest {
     }
 
     //POST METHOD dengan Params
-    fun postRequest(url: String){
-        val url = "https://eowpkjl19iypcej.m.pipedream.net"
+    fun postRequest(url: String, username: String, password: String){
+        val url = "https://bejobarokah.my.id:8443/auth/test"
 
         val postRequest = object :StringRequest(Request.Method.POST,url,
         Response.Listener { response ->
@@ -89,8 +90,8 @@ class MyVolleyRequest {
             //Ctrl +O
             override fun getParams(): MutableMap<String, String>? {
                 val params = HashMap<String,String>()
-                params.put("Login","your credentials" )
-                params.put("Password", "your credentials")
+                params.put("username", username)
+                params.put("password", password)
                 return params
             }
             override fun getBodyContentType(): String {
@@ -98,6 +99,25 @@ class MyVolleyRequest {
             }
         }
                 addToRequestQueue(postRequest)
+    }
+
+    fun postRegisterRequest(url: String, username: String, email: String, password: String){
+        val url = "https://bejobarokah.my.id:8443/auth/register"
+
+        var jsonObject = JSONObject()
+        jsonObject.put("username", username)
+        jsonObject.put("email", email)
+        jsonObject.put("password", password)
+
+        val postRequest = JsonObjectRequest(Request.Method.POST,url, jsonObject,
+            Response.Listener { response ->
+                iVolley!!.onResponse(response.toString())
+            }, Response.ErrorListener { error ->
+                try{
+                    iVolley!!.onResponse(error.message!!)
+                }catch (e:Exception){
+                } })
+        addToRequestQueue(postRequest)
     }
 
     //PUT METHOD dengan Params

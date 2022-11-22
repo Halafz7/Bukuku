@@ -29,6 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.example.bukuku'
 }
 
 dependencies {
@@ -43,5 +44,6 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.android.volley/volley
     implementation group: 'com.android.volley', name: 'volley', version: '1.2.1'
+    implementation 'com.google.code.gson:gson:2.10'
 
 }
