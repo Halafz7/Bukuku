@@ -16,7 +16,7 @@ import org.json.JSONObject
 class Register : AppCompatActivity(),IVolley, View.OnClickListener{
     override fun onResponse(response: JSONObject) {
         //Show Toast
-        Toast.makeText(this@Register, "Registrasi Berhasil \n Silahkan Cek Email Anda", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@Register, "Registrasi Berhasil \nSilahkan Cek Email Anda", Toast.LENGTH_LONG).show()
     }
 
     private lateinit var registerNow: Button
@@ -24,6 +24,7 @@ class Register : AppCompatActivity(),IVolley, View.OnClickListener{
     private lateinit var fieldUsername: EditText
     private lateinit var fieldEmail: EditText
     private lateinit var fieldPassword: EditText
+    private lateinit var fieldConfirmPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,16 +33,22 @@ class Register : AppCompatActivity(),IVolley, View.OnClickListener{
         fieldUsername = findViewById(R.id.fieldUsername)
         fieldEmail = findViewById(R.id.fieldEmail)
         fieldPassword = findViewById(R.id.filedPassword)
+        fieldConfirmPassword = findViewById(R.id.fieldConfirmPassword)
 
         registerNow = findViewById(R.id.registerNow)
         registerNow.setOnClickListener{
-            var jsonObject = JSONObject()
-            jsonObject.put("username", fieldUsername.text.toString())
-            jsonObject.put("email", fieldEmail.text.toString())
-            jsonObject.put("password", fieldPassword.text.toString())
+            if(fieldPassword.text.toString() != fieldConfirmPassword.text.toString()){
+                Toast.makeText(this@Register, "Password dan Confirm Password berbeda", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                var jsonObject = JSONObject()
+                jsonObject.put("username", fieldUsername.text.toString())
+                jsonObject.put("email", fieldEmail.text.toString())
+                jsonObject.put("password", fieldPassword.text.toString())
 
-            MyVolleyRequest.getInstance(this@Register, this@Register)
-                .registerRequest("https://bejobarokah.my.id:8443/auth/register", jsonObject)
+                MyVolleyRequest.getInstance(this@Register, this@Register)
+                    .registerRequest("https://bejobarokah.my.id:8443/auth/register", jsonObject)
+            }
         }
 
         signInRegister = findViewById(R.id.signInRegister)
