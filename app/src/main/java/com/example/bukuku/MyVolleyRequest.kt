@@ -2,13 +2,16 @@ package com.example.bukuku
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.util.Base64
 import android.util.LruCache
-import android.widget.Toast
+import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.ImageLoader
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.JsonRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
@@ -68,64 +71,104 @@ class MyVolleyRequest {
 
     //GET METHOD
     fun getRequest(url:String){
-        val getRequest = JsonObjectRequest(Request.Method.GET,url,null,Response.Listener { response ->
-            iVolley!!.onResponse(response.toString())
-        },Response.ErrorListener { error ->
-            iVolley!!.onResponse(error.message!!)
+        val getRequest = object: JsonObjectRequest(Request.Method.GET,url,null, { response ->
+            iVolley!!.onResponse(response)
+        }, { error ->
+            iVolley!!.onErrorResponse(error)
         })
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                var pref = context!!.applicationContext.getSharedPreferences("BUKUKU_APP", Context.MODE_PRIVATE)
+                var token = pref.getString("token", null)
+                var headers = HashMap<String, String>()
+                headers.put("Authorization", "Bearer " + token)
+                return headers
+            }
+        }
+
+        addToRequestQueue(getRequest)
+    }
+
+    fun getArrayRequest(url:String){
+        val getRequest = object: JsonArrayRequest(Request.Method.GET,url,null, { response ->
+            iVolley!!.onArrayResponse(response)
+        }, { error ->
+            iVolley!!.onErrorResponse(error)
+        })
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                var pref = context!!.applicationContext.getSharedPreferences("BUKUKU_APP", Context.MODE_PRIVATE)
+                var token = pref.getString("token", null)
+                var headers = HashMap<String, String>()
+                headers.put("Authorization", "Bearer " + token)
+                return headers
+            }
+        }
 
         addToRequestQueue(getRequest)
     }
 
     //POST METHOD dengan Params
-    fun postRequest(url: String, username: String, password: String){
-        val url = "https://bejobarokah.my.id:8443/auth/test"
-
-        val postRequest = object :StringRequest(Request.Method.POST,url,
-        Response.Listener { response ->
-            iVolley!!.onResponse(response.toString())
-        },Response.ErrorListener { error -> iVolley!!.onResponse(error.message!!) })
-
+    fun postRequest(url: String, jsonObject: JSONObject){
+        val postRequest = object: JsonObjectRequest(Request.Method.POST,url, jsonObject,
+            { response ->
+                iVolley!!.onResponse(response)
+            }, { error ->
+                iVolley!!.onErrorResponse(error)
+            })
         {
-            //Ctrl +O
-            override fun getParams(): MutableMap<String, String>? {
-                val params = HashMap<String,String>()
-                params.put("username", username)
-                params.put("password", password)
-                return params
-            }
-            override fun getBodyContentType(): String {
-                return "application/json"
+            override fun getHeaders(): MutableMap<String, String> {
+                var pref = context!!.applicationContext.getSharedPreferences("BUKUKU_APP", Context.MODE_PRIVATE)
+                var token = pref.getString("token", null)
+                var headers = HashMap<String, String>()
+                headers.put("Authorization", "Bearer " + token)
+                return headers
             }
         }
-                addToRequestQueue(postRequest)
-    }
+        postRequest.setRetryPolicy(DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT))
 
-    fun postRegisterRequest(url: String, username: String, email: String, password: String){
-        val url = "https://bejobarokah.my.id:8443/auth/register"
-
-        var jsonObject = JSONObject()
-        jsonObject.put("username", username)
-        jsonObject.put("email", email)
-        jsonObject.put("password", password)
-
-        val postRequest = JsonObjectRequest(Request.Method.POST,url, jsonObject,
-            Response.Listener { response ->
-                iVolley!!.onResponse(response.toString())
-            }, Response.ErrorListener { error ->
-                try{
-                    iVolley!!.onResponse(error.message!!)
-                }catch (e:Exception){
-                } })
         addToRequestQueue(postRequest)
     }
 
+    fun registerRequest(url: String, jsonObject: JSONObject){
+        val registerRequest = JsonObjectRequest(Request.Method.POST,url, jsonObject,
+            { response ->
+                iVolley!!.onResponse(response)
+            }, { error ->
+                iVolley!!.onErrorResponse(error)
+            })
+        registerRequest.setRetryPolicy(DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT))
+
+        addToRequestQueue(registerRequest)
+    }
+
+    fun authRequest(url: String, username: String, password: String){
+        val authRequest = object: JsonObjectRequest(Request.Method.POST, url, null,
+            {response -> iVolley!!.onResponse(response)},
+            {error -> iVolley!!.onErrorResponse(error)})
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                var credentials = username+":"+password
+                var base64EncodedCredentials = Base64.encodeToString(credentials.toByteArray(), Base64.NO_WRAP)
+                var headers = HashMap<String, String>()
+                headers.put("Authorization", "Basic " + base64EncodedCredentials)
+                return headers
+            }
+        }
+        authRequest.setRetryPolicy(DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT))
+
+        addToRequestQueue(authRequest)
+    }
+
     //PUT METHOD dengan Params
-    fun putRequest(url: String){
-        val putRequest = object :StringRequest(Request.Method.PUT,url,
+    fun putRequest(url: String, jsonObject: JSONObject){
+        val putRequest = object :JsonObjectRequest(Request.Method.PUT,url,jsonObject,
             Response.Listener { response ->
-                iVolley!!.onResponse(response.toString())
-            },Response.ErrorListener { error -> iVolley!!.onResponse(error.message!!) })
+                iVolley!!.onResponse(response)
+            },Response.ErrorListener { error -> iVolley!!.onErrorResponse(error) })
         {
             //Ctrl +O
             override fun getParams(): MutableMap<String, String>? {
@@ -139,11 +182,11 @@ class MyVolleyRequest {
     }
 
     //PATCH METHOD dengan Params
-    fun patchRequest(url: String){
-        val patchRequest = object :StringRequest(Request.Method.PATCH,url,
+    fun patchRequest(url: String, jsonObject: JSONObject){
+        val patchRequest = object :JsonObjectRequest(Request.Method.PATCH,url,jsonObject,
             Response.Listener { response ->
-                iVolley!!.onResponse(response.toString())
-            },Response.ErrorListener { error -> iVolley!!.onResponse(error.message!!) })
+                iVolley!!.onResponse(response)
+            },Response.ErrorListener { error -> iVolley!!.onErrorResponse(error) })
         {
             //Ctrl +O
             override fun getParams(): MutableMap<String, String>? {
@@ -158,9 +201,19 @@ class MyVolleyRequest {
 
     //DELETE METHOD
     fun deleteRequest(url: String){
-        val deleteRequest = StringRequest(Request.Method.DELETE,url,Response.Listener { response ->
+        val deleteRequest = object: JsonObjectRequest(Request.Method.DELETE,url,null,
+            { response ->
             iVolley!!.onResponse(response)
-        },Response.ErrorListener { error -> iVolley!!.onResponse(error.message!!) })
+        }, { error -> iVolley!!.onErrorResponse(error) })
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                var pref = context!!.applicationContext.getSharedPreferences("BUKUKU_APP", Context.MODE_PRIVATE)
+                var token = pref.getString("token", null)
+                var headers = HashMap<String, String>()
+                headers.put("Authorization", "Bearer " + token)
+                return headers
+            }
+        }
 
         addToRequestQueue(deleteRequest)
     }
@@ -169,9 +222,9 @@ class MyVolleyRequest {
         private var mInstance : MyVolleyRequest? = null
         @Synchronized
         fun getInstance(context: Context, iVolley: IVolley): MyVolleyRequest{
-            if(mInstance == null){
-                mInstance = MyVolleyRequest(context,iVolley)
-            }
+//            if(mInstance == null){
+            mInstance = MyVolleyRequest(context,iVolley)
+//            }
             return mInstance!!
         }
     }

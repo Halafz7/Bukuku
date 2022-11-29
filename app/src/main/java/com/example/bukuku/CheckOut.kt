@@ -6,10 +6,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import com.android.volley.VolleyError
+import org.json.JSONArray
+import org.json.JSONObject
 
 class CheckOut : AppCompatActivity(), IVolley, View.OnClickListener {
-    override fun onResponse(response: String) {
+    override fun onResponse(response: JSONObject) {
         Toast.makeText(this@CheckOut,""+response,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onArrayResponse(response: JSONArray) {
+        TODO("Not yet implemented")
     }
 
     private lateinit var back: Button
@@ -40,5 +47,9 @@ class CheckOut : AppCompatActivity(), IVolley, View.OnClickListener {
                 startActivity(intentPlaceOrder)
             }
         }
+    }
+
+    override fun onErrorResponse(error: VolleyError) {
+        TODO("Not yet implemented")
     }
 }

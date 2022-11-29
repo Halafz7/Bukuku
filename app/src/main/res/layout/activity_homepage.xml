@@ -110,11 +110,19 @@
                         android:background="#CECECE"
                         android:id="@+id/book1">
                     </com.google.android.material.imageview.ShapeableImageView>
+
                     <FrameLayout
-                        android:layout_marginTop="10dp"
                         android:layout_width="140dp"
                         android:layout_height="25dp"
+                        android:layout_marginTop="10dp"
                         android:background="#CECECE">
+
+                        <TextView
+                            android:id="@+id/fieldJudul1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="TextView" />
                     </FrameLayout>
                     <FrameLayout
                         android:layout_marginTop="5dp"

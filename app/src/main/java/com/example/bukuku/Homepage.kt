@@ -1,21 +1,32 @@
 package com.example.bukuku
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.PopupMenu
-import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.widget.MenuPopupWindow
+import com.android.volley.VolleyError
+import org.json.JSONArray
+import org.json.JSONObject
 
 class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
-    override fun onResponse(response: String) {
-        //Show Toast
-        Toast.makeText(this@Homepage,""+response, Toast.LENGTH_SHORT).show()
+    override fun onArrayResponse(response: JSONArray) {
+        try{
+            var arrayBuku = response
+            for(i in 0 until 1){
+                var jsonObject = arrayBuku.getJSONObject(i)
+                fieldJudul1.setText(jsonObject.getString("judul"))
+            }
+        }catch (e: Exception){
+            Toast.makeText(this@Homepage,"???", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private lateinit var buku1: ImageView
@@ -23,6 +34,7 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
     private lateinit var buku3: ImageView
     private lateinit var buku4: ImageView
     private lateinit var profile: ImageView
+    private lateinit var fieldJudul1: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +45,11 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
         buku3 = findViewById(R.id.book3)
         buku4 = findViewById(R.id.book4)
         profile = findViewById(R.id.profile)
+        fieldJudul1 = findViewById(R.id.fieldJudul1)
+
+        MyVolleyRequest.getInstance(this@Homepage, this@Homepage)
+            .getArrayRequest("https://bejobarokah.my.id:8443/buku")
+
         val button = findViewById<Button>(R.id.clickMenu)
         button.setOnClickListener {
             val popupMenu: androidx.appcompat.widget.PopupMenu = androidx.appcompat.widget.PopupMenu(this,button)
@@ -113,6 +130,15 @@ class Homepage : AppCompatActivity(), IVolley, View.OnClickListener {
                 startActivity(intentBook)
             }
             }
+        }
+
+        override fun onErrorResponse(error: VolleyError) {
+            Toast.makeText(this@Homepage,error.toString(), Toast.LENGTH_LONG).show()
+        }
+
+        override fun onResponse(response: JSONObject) {
+            //Show Toast
+            Toast.makeText(this@Homepage,"How?", Toast.LENGTH_SHORT).show()
         }
 
     }
